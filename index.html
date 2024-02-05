@@ -1,1 +1,30 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> test gps in body </p>
+    <a href="https://developers.google.com/maps/documentation/javascript/overview#javascript"> link to new api</a>
+    <div id="divId"></div>
+    <div id="map">
+
+</div>
+</body>
+
+<script>
+    const watchId = navigator.geolocation.watchPosition(position => {
+        const { latitude, longitude } = position.coords;
+        // Show a map centered at latitude / longitude.
+        map.innerHTML = '<iframe width="700" height="500" src="https://maps.google.com/maps?q=' 
+        + latitude + ',' + longitude + '&amp;output=embed"></iframe>';
+        divId.innerHTML = "watchID _ " + watchId;
+        console.log("watchID  "+watchId);
+    });
+</script>
+
+</html>
